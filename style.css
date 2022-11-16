@@ -1,4 +1,8 @@
+.content{
+    padding: 50px;
+}
 .content__circle{
+
     
     width: 100px;
     height: 100px;
@@ -8,10 +12,20 @@
     left: 0;
     
 
-    animation-name: green-circle;
-    animation-duration: 2s ;
+    /* animation-name: green-circle;
+    animation-duration: 2s;
     animation-timing-function: linear;
-    animation-iteration-count: 3;
+    animation-iteration-count: infinite;
+    animation-direction: ;
+    animation-delay: 3s;
+    animation-fill-mode: forwards; */
+
+    animation:green-circle 2s linear infinite alternate 2s forwards,red-circle 5s linear infinite alternate 2s forwards;
+}
+
+.content:hover .content__circle{
+    animation-play-state: paused;
+
 }
 
 @keyframes green-circle{
@@ -20,6 +34,21 @@
 
     }
     50%{
+        border-radius: 0%;
+
+    }
+    100% {
+         left: 500px;
+    }
+
+}
+@keyframes red-circle{
+    50% {
+        left: 0;
+
+    }
+    50%{
+        border-radius: 0%;
 
     }
     100% {
